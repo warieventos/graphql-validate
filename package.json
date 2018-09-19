@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "graphql": "^14.0.2",
+    "standard": "^12.0.1",
+    "string-format": "^2.0.0",
+    "validator": "^10.7.1"
+  }
+}
