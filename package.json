@@ -4,7 +4,7 @@
     "string-format": "^2.0.0",
     "validator": "^10.7.1"
   },
-  "name": "graphql-validator",
+  "name": "graphql-validate",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warieventos/graphql-validator.git"
+    "url": "git+https://github.com/warieventos/graphql-validate.git"
   },
   "author": "Tércio Garcia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/warieventos/graphql-validator/issues"
+    "url": "https://github.com/warieventos/graphql-validate/issues"
   },
   "homepage": "https://github.com/warieventos/graphql-validator#readme",
   "description": ""
