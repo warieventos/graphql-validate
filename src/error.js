@@ -1,6 +1,6 @@
 const { GraphQLError } = require('graphql')
 
-exports.ValidationError = class ValidationError extends GraphQLError {
+module.exports.ValidationError = class ValidationError extends GraphQLError {
   constructor (errors) {
     super('The request is invalid.')
     this.state = errors.reduce((result, error) => {
