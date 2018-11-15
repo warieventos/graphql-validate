@@ -12,15 +12,15 @@ validator.utils = {
           value = [value]
         }
         await value.map(async item => {
-          try {
-            await validator.processValidation(config.validation, item, false)
-          } catch (processedErrors) {
-            errors.push(...processedErrors.map(error => {
-              error.key = `${attribute}.${error.key}`
-              return error
-            }))
+            try {
+              await validator.processValidation(config.validation, item, false)
+            } catch (processedErrors) {
+              errors.push(...processedErrors.map(error => {
+                error.key = `${attribute}.${error.key}`
+                return error
+              }))
+            }
           }
-        }
         )
       } else {
         let result = config.validation(value)
@@ -89,7 +89,8 @@ validator.listValidator = (list = [{ data: {}, params: [] }], validation) => {
 validator.isDocumentByType = (document, type) => {
   const documentValidators = {
     CPF: validator.isCpf,
-    CNPJ: validator.isCnpj
+    CNPJ: validator.isCnpj,
+    OTHER: value => validator.isAlphanumeric(value) && value.length < 21
   }
 
   if (documentValidators[type.toUpperCase()]) {
