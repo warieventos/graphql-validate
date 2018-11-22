@@ -129,6 +129,6 @@ validator.hasDuplicatedInObject = (propertyName, inputArray) => {
 }
 
 module.exports = {
-  validator,
+  ...validator,
   extractGraphQLErrors
 }
