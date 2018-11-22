@@ -1,13 +1,12 @@
 const validator = require('validator')
 const format = require('string-format')
 const { ValidationError } = require('./error')
-const extractGraphqlErrors = require('./functions/extractGraphqlErrors')
+const extractGraphQLErrors = require('./functions/extractGraphQLErrors')
 const isCpf = require('./functions/isCpf')
 const isCnpj = require('./functions/isCnpj')
 
 validator.isCnpj = isCnpj
 validator.isCpf = isCpf
-validator.extractGraphqlErrors = extractGraphqlErrors
 
 validator.utils = {
   promisifyValidator: (attribute, value, config) => {
@@ -129,4 +128,7 @@ validator.hasDuplicatedInObject = (propertyName, inputArray) => {
   return seenDuplicate
 }
 
-module.exports = validator
+module.exports = {
+  validator,
+  extractGraphQLErrors
+}
