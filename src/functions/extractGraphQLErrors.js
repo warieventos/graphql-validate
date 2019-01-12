@@ -12,10 +12,12 @@ const defaultMap = {
 }
 
 const getSummary = (data) => {
-  if (data.length === 0) {
+  const length = Object.values(data).length
+
+  if (length === 0) {
     return false
   }
-  else if (data.length === 1) {
+  else if (length === 1) {
     return Object.values(data)[0]
   }
   return Object.values(data).reduce((prev, current) => {
